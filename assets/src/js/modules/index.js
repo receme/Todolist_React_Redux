@@ -1,13 +1,13 @@
 const initialState = {
-  loading: true,
+  todos: []
 };
 
 function initial(state = initialState, action) {
   switch (action.type) {
-    case 'CHANGE':
+    case 'ADD_TODO':
       return {
         ...state,
-        loading: !state.loading
+        todos: state.todos.concat([action.todo])
       };
     default: {
       return state;
@@ -18,3 +18,9 @@ function initial(state = initialState, action) {
 export {
   initial,
 };
+
+export function addTodo() {
+  return {
+    type: 'ADD_TODO'
+  };
+}

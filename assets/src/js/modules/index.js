@@ -19,8 +19,12 @@ export {
   initial,
 };
 
-export function addTodo() {
+export function addTodo(text) {
   return {
-    type: 'ADD_TODO'
+    type: 'ADD_TODO',
+    todo: {
+      done: false,
+      text
+    }
   };
 }
